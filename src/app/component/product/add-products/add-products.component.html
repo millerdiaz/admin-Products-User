@@ -1,0 +1,60 @@
+<form [formGroup]="formProduct" (ngSubmit)="addProduct()">
+  <div class="form-field">
+    <label for="marca">Marca</label>
+    <input id="marca" formControlName="marca" />
+    <div class="error-message" [class.show]="formProduct.get('marca')?.invalid && formProduct.get('marca')?.touched">
+      Marca es requerida y debe tener al menos 3 caracteres.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="modelo">Modelo</label>
+    <input id="modelo" formControlName="modelo" />
+    <div class="error-message" [class.show]="formProduct.get('modelo')?.invalid && formProduct.get('modelo')?.touched">
+      Modelo es requerido y debe tener al menos 4 caracteres.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="img">Imagen</label>
+    <input id="img" formControlName="img" />
+    <div class="error-message" [class.show]="formProduct.get('img')?.invalid && formProduct.get('img')?.touched">
+      La URL de la imagen es requerida y debe tener al menos 8 caracteres.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="precio">Precio</label>
+    <input id="precio" formControlName="precio" />
+    <div class="error-message" [class.show]="formProduct.get('precio')?.invalid && formProduct.get('precio')?.touched">
+      Precio es requerido y debe tener al menos 6 caracteres.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="genero">Género</label>
+    <input id="genero" formControlName="genero" />
+    <div class="error-message" [class.show]="formProduct.get('genero')?.invalid && formProduct.get('genero')?.touched">
+      Género es requerido y debe tener al menos 6 caracteres.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="descripcion">Descripción</label>
+    <input id="descripcion" formControlName="descripcion" />
+    <div class="error-message" [class.show]="formProduct.get('descripcion')?.invalid && formProduct.get('descripcion')?.touched">
+      Descripción es requerida.
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="disponibilidad">Disponibilidad</label>
+    <input id="disponibilidad" formControlName="disponibilidad" />
+    <div class="error-message" [class.show]="formProduct.get('disponibilidad')?.invalid && formProduct.get('disponibilidad')?.touched">
+      Disponibilidad es requerida y debe tener al menos 3 caracteres.
+    </div>
+  </div>
+
+  <button type="submit" (click)="addProduct()" >Crear producto</button>
+</form>
+

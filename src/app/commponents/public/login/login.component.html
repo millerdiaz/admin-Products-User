@@ -1,0 +1,11 @@
+<div class="register">
+
+  <form [formGroup]="formLogin" class="form">
+      <span class="title">Inicio de sesion</span>
+      <label for="email" class="label">Correo</label>
+      <input formControlName="correo" type="email" id="email" name="email" required="" class="input">
+      <label for="password" class="label">Contraseña</label>
+      <input formControlName="contrasena"  type="password" id="password" name="password" required="" class="input">
+      <button type="submit" class="submit"  (click)="login()">Iniciar sesión</button>
+    </form>
+  </div>

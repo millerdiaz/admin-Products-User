@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+
+<header>
+  <nav >
+    <div class="logoPrincipal">
+      <a [routerLink]="['/home']" > <img src="logoPrincipal.png"  routerLinkActive="router-link-active"  alt="logo empresa"></a>
+    </div>
+
+    <div class="botonesNav">
+      @if (roll === "administrador" || roll ==="supervisor") {
+      <button class="catalogo"><a [routerLink]="['/home']" >Productos</a>
+        <!-- <div class="opciones">
+          <a>Gafas de sol</a>
+          <a>Gafas Oftafmologicas</a>
+          <a>Lentes de contacto</a>
+          <a>Medicamentos</a>
+        </div> -->
+      </button>
+    }
+      @if (roll === "administrador" || roll ==="supervisor") {
+      <button class="promociones"><a [routerLink]="['/addProducts']">Agregar productos</a>
+      </button>
+
+      }
+      @if (roll === "administrador") {
+
+      <button class="inicioSesion"><a [routerLink]="['/users']" routerLinkActive="router-link-active">Usuarios</a>
+      </button>
+    }
+      @if (usuario) {
+        <button (click)="logOut()"  class="inicioSesion"><a  routerLinkActive="router-link-active">Cerrar Sesión</a>
+        </button>
+      }
+
+      @if (!usuario) {
+        <button class="inicioSesion"><a  [routerLink]="['/login']" routerLinkActive="router-link-active"  >Iniciar sesion</a>
+          <!-- <div class="opcionCuatro">
+            <a [routerLink]="['/login']" >Inicia sesión</a>
+            <a [routerLink]="['/register']">Registrate</a>
+
+          </div> -->
+         </button>
+      }
+    </div>
+  </nav>
+</header>
+
+
+
